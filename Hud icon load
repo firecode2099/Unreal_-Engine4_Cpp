@@ -1,4 +1,4 @@
-// Set the Icon texture this is global
+// Set the Icon texture this go inside constructor class
 	static ConstructorHelpers::FObjectFinder<UTexture2D> IconTexObj(TEXT("C:/path....."));
 	_Icon = IconTexObj.Object;
 
