@@ -1,0 +1,24 @@
+// Set the Icon texture
+	static ConstructorHelpers::FObjectFinder<UTexture2D> IconTexObj(TEXT("C:/path....."));
+	_Icon = IconTexObj.Object;
+
+Super::DrawHUD();
+
+	// Find center of the Canvas
+	const FVector2D Center(Canvas->ClipX * 0.5f, Canvas->ClipY * 0.5f);
+	
+
+ //Icon HUD position x & y
+	const FVector2D IconDrawPosition((10),10);
+
+
+	// Icon and Size
+	FCanvasTileItem TileItem2(IconDrawPosition, _Icon->Resource, FLinearColor::White);
+	TileItem2.Size=IconDrawsize;
+
+//Blend
+	TileItem2.BlendMode = SE_BLEND_Translucent;
+
+	
+ //Draw
+	Canvas->DrawItem(TileItem2);
