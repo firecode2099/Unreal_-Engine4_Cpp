@@ -1,8 +1,7 @@
-// Set the Icon texture
+// Set the Icon texture this is global
 	static ConstructorHelpers::FObjectFinder<UTexture2D> IconTexObj(TEXT("C:/path....."));
 	_Icon = IconTexObj.Object;
 
-Super::DrawHUD();
 
 	// Find center of the Canvas
 	const FVector2D Center(Canvas->ClipX * 0.5f, Canvas->ClipY * 0.5f);
