@@ -1,0 +1,12 @@
+
+	//cast Fstring float-----------------------------------------------------------------------
+	FString _time = FString::Printf(TEXT("data sreen :%s"), *FString::SanitizeFloat(_Time));
+	GEngine->AddOnScreenDebugMessage(100, 15.0f, FColor::Red, _time);
+
+
+	//show Scene name -----------------------------------------------------
+	FString _nameScene = GetWorld()->GetFName().ToString();
+	GEngine->AddOnScreenDebugMessage(0, 100.0f, FColor::Yellow, _nameScene);
+
+	//Log console messaggewindow------------------------------------------
+	UE_LOG(LogTemp,Warning,TEXT("This is log"));
