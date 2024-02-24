@@ -1,0 +1,58 @@
+/*
+-------------------------------------------
+Implementation UE4 Animation Montage cpp
+firecode2099@gmail.com
+02/24/24
+-------------------------------------------
+*/
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Character.h"
+#include "Myclass.generated.h"
+
+//Declaration class
+Myclass.h
+{
+
+
+protected:
+	// APawn interface
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	// End of APawn interface
+
+
+public:
+
+  //Action method
+  void DoAction();
+
+
+  //public and editable frome  UE4 Editor
+  UPROPERTY(EditAnywhere,Category=Animation)
+	UAnimMontage * _Ani=nullptr;
+
+}
+
+
+//Implementation class
+Myclass.cpp
+{
+   void Myclass:: SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override
+   {
+      //pointer to methods bind button
+    PlayerInputComponent->BindAction("Mybutton", IE_Pressed, this, &ATercerapersonaCharacter::DoAction);
+
+   }
+
+    void Myclass:: DoAction()
+    {
+     if(_Ani)
+     {     
+           //Play animation montage
+           PlayAnimMontage(_Ani, 10,NAME_None);
+		 }
+   }
+
+}
