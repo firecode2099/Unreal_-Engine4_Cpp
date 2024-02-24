@@ -52,7 +52,7 @@ Myclass.cpp
      {     
            //Play animation montage
            PlayAnimMontage(_Ani, 10,NAME_None);
-		 }
+     }
    }
 
 }
